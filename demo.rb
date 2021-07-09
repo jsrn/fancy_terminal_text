@@ -32,3 +32,6 @@ puts [
 puts FTT::Text.new('text').colour(:red).centre(6)
 
 puts FTT::Block.new(FTT::Text.new("Borders and padding!").colour(:green)).pad.border
+
+line = FTT::Block.new(FTT::Text.new('Big centred header').bold.centre(FTT::Util.term_width - 4))
+puts line.pad.border

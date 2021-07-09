@@ -1,6 +1,6 @@
 require 'ostruct'
 
-module FFT
+module FTT
   class Util
     def self.term_dimensions
       height, width = `stty size`.chomp.split(' ').map(&:to_i)
