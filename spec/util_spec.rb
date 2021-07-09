@@ -8,3 +8,15 @@ RSpec.describe "Util.term_dimensions" do
     expect(dimensions.height).to be_a(Fixnum)
   end
 end
+
+RSpec.describe "Util.term_height" do
+  it "gets the term height" do
+    expect(FFT::Util.term_height).to be_a(Fixnum)
+  end
+end
+
+RSpec.describe "Util.term_width" do
+  it "gets the term width" do
+    expect(FFT::Util.term_width).to be_a(Fixnum)
+  end
+end
