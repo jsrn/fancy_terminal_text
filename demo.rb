@@ -2,36 +2,36 @@
 
 require "./lib/fancy_terminal_text.rb"
 
-puts FTT::Text.new("# Fancy Terminal Text Demo").bold
-puts ""
-puts FTT::Text.new("## Text Elements").bold
+sprinkle = [
+  FTT::Text.new('s').colour(:red),
+  FTT::Text.new('p').colour(:light_red),
+  FTT::Text.new('r').colour(:yellow),
+  FTT::Text.new('i').colour(:light_green),
+  FTT::Text.new('n').colour(:green),
+  FTT::Text.new('k').colour(:blue),
+  FTT::Text.new('l').colour(:light_magenta),
+  FTT::Text.new('e').colour(:magenta),
+].join
 
-puts FTT::Text.new("A plain string!")
+puts <<-DEMO
+#{FTT::Text.new("# Fancy Terminal Text Demo").bold}
 
-text = FTT::Text.new("Padding")
-puts text.left_pad(0)
-puts text.left_pad(8)
-puts text.left_pad(9)
-puts text.left_pad(10)
+#{FTT::Text.new("## Text Elements").bold}
 
-print "Some text can be "
-puts FTT::Text.new("bold!").bold
-print "Some text can be "
-puts FTT::Text.new("colourful!").colour(:red)
+#{FTT::Text.new("Text can be totally plain.")}
 
-puts [
-       FTT::Text.new('R').colour(:red),
-       FTT::Text.new('a').colour(:light_red),
-       FTT::Text.new('i').colour(:yellow),
-       FTT::Text.new('n').colour(:green),
-       FTT::Text.new('b').colour(:blue),
-       FTT::Text.new('o').colour(:light_magenta),
-       FTT::Text.new('w').colour(:magenta),
-     ].join
+It can have a little #{FTT::Text.new("splash").colour(:red)} of colour. Heck, give it a whole #{sprinkle}.
 
-puts FTT::Text.new('text').colour(:red).centre(6)
+You can nudge your text...
+#{FTT::Text.new("in a little...").left_pad(15)}
+#{FTT::Text.new("... or just centre it.").centre(FTT::Util.term_width)}
 
-puts FTT::Block.new(FTT::Text.new("Borders and padding!").colour(:green)).pad.border
+Now that's #{FTT::Text.new('bold!').bold}
 
-line = FTT::Block.new(FTT::Text.new('Big centred header').bold.centre(FTT::Util.term_width - 4))
-puts line.pad.border
+
+#{FTT::Text.new("## Borders & Padding").bold}
+
+#{FTT::Block.new(FTT::Text.new("You can pad and border me.").colour(:green)).pad.border}
+
+#{FTT::Block.new(FTT::Text.new('You can make me take up the whole terminal!').bold.centre(FTT::Util.term_width - 4)).pad.border}
+DEMO
