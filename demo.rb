@@ -30,3 +30,5 @@ puts [
      ].join
 
 puts FTT::Text.new('text').colour(:red).centre(6)
+
+puts FTT::Block.new(FTT::Text.new("Borders and padding!").colour(:green)).pad.border
