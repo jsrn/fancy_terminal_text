@@ -27,7 +27,7 @@ module FTT
       FTT::Block.new(*padded_all)
     end
 
-    def border(chars = ['#'])
+    def border(chars = FTT::Borders::HASH)
       top_border = ''
 
       (components.first.visual_length + 2).times do
