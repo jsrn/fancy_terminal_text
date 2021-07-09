@@ -9,6 +9,20 @@ RSpec.describe "Block#new" do
     ruby_friends = FTT::Line.new(ruby, friends)
 
     block = FTT::Block.new(hello, ruby_friends)
-    puts block
+  end
+end
+
+
+RSpec.describe "Block#pad" do
+  it "pads" do
+    padded_result = FTT::Block.new(FTT::Text.new('a')).pad.to_s
+    expect(padded_result).to eq("   \n a \n   ")
+  end
+end
+
+RSpec.describe "Block#border" do
+  it "borders" do
+    bordered_result = FTT::Block.new(FTT::Text.new('a')).pad.border.to_s
+    expect(bordered_result).to eq("#####\n#   #\n# a #\n#   #\n#####")
   end
 end
