@@ -48,7 +48,7 @@ RSpec.describe "Text#left_pad" do
   end
 end
 
-RSpec.describe "Text#leftright_pad" do
+RSpec.describe "Text#right_pad" do
   it "right pads text" do
     text = FTT::Text.new('text')
     expect(text.right_pad(4).to_s).to eq('text')
@@ -74,5 +74,15 @@ RSpec.describe "Text#centre" do
     expect(text.centre(4).visual_length).to eq(4)
     expect(text.centre(5).visual_length).to eq(5)
     expect(text.centre(6).visual_length).to eq(6)
+  end
+end
+
+RSpec.describe "Text#italic" do
+  it "italicises text" do
+    expect(FTT::Text.new("text").italic.to_s).to eq("\e[3mtext\e[0m")
+  end
+
+  it "does not affect visual length" do
+    expect(FTT::Text.new("text").italic.visual_length).to eq(4)
   end
 end

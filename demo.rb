@@ -26,7 +26,7 @@ You can nudge your text...
 #{FTT::Text.new("in a little...").left_pad(15)}
 #{FTT::Text.new("... or just centre it.").centre(FTT::Util.term_width)}
 
-Now that's #{FTT::Text.new('bold!').bold}
+Now #{FTT::Text.new("that's").italic} #{FTT::Text.new('bold!').bold}
 
 
 #{FTT::Text.new("## Borders & Padding").bold}

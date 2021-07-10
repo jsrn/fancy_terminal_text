@@ -20,9 +20,20 @@ module FTT
       @string.gsub(/\e\[[^\x40-\x7E]*[\x40-\x7E]/, "").length
     end
 
+    # Bolds the text.
+    #
+    # @return [Text]
     def bold
       clean = @string.gsub("\033[1m", "").gsub("\033[0m", "")
       self.class.new("\033[1m#{clean}\033[0m")
+    end
+
+    # Italicises the text.
+    #
+    # @return [Text]
+    def italic
+      clean = @string.gsub("\e[3m", "").gsub("\e[0m", "")
+      self.class.new("\e[3m#{clean}\e[0m")
     end
 
     def left_pad(length)
