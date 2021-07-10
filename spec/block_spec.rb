@@ -9,6 +9,7 @@ RSpec.describe "Block#new" do
     ruby_friends = FTT::Text.from_parts(ruby, friends)
 
     block = FTT::Block.new(hello, ruby_friends)
+    expect(block.to_s).to eq("hello       \n\e[1mRuby \e[0m\e[0;31;49mfriends\e[0m")
   end
 end
 
