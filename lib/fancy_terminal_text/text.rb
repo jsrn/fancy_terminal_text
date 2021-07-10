@@ -2,6 +2,7 @@ require 'colorize'
 
 module FTT
   class Text
+    # @param string [String]
     def initialize(string)
       @string = string
     end
@@ -10,6 +11,10 @@ module FTT
       @string
     end
 
+    # The length of the string in terms of how much space it actually occupies
+    # on screen, without things like control characters.
+    #
+    # @return [Integer]
     def visual_length
       # Regex shamelessly taken from https://stackoverflow.com/a/56206076/16164934
       @string.gsub(/\e\[[^\x40-\x7E]*[\x40-\x7E]/, "").length
