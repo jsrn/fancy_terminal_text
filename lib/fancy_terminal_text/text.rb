@@ -51,7 +51,7 @@ module FTT
     def rainbow
       new_string = ""
 
-      FTT::Colours::RAINBOW.cycle(2).each_with_index do |colour, index|
+      FTT::Colours::RAINBOW.cycle.each_with_index do |colour, index|
         character = @string[index]
         break if character.nil?
 
