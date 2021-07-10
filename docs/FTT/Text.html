@@ -108,6 +108,37 @@
 
   
     <h2>
+      Class Method Summary
+      <small><a href="#" class="summary_toggle">collapse</a></small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#from_parts-class_method" title="from_parts (class method)">.<strong>from_parts</strong>(*segments)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+    </ul>
+  
+    <h2>
       Instance Method Summary
       <small><a href="#" class="summary_toggle">collapse</a></small>
     </h2>
@@ -301,6 +332,30 @@
         <li class="public ">
   <span class="summary_signature">
     
+      <a href="#underline-instance_method" title="#underline (instance method)">#<strong>underline</strong>  &#x21d2; Text </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Underlines the text.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
       <a href="#visual_length-instance_method" title="#visual_length (instance method)">#<strong>visual_length</strong>  &#x21d2; Integer </a>
     
 
@@ -369,12 +424,12 @@
       <pre class="lines">
 
 
-6
-7
-8</pre>
+10
+11
+12</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/fancy_terminal_text/text.rb', line 6</span>
+      <pre class="code"><span class="info file"># File 'lib/fancy_terminal_text/text.rb', line 10</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span><span class='lparen'>(</span><span class='id identifier rubyid_string'>string</span><span class='rparen'>)</span>
   <span class='ivar'>@string</span> <span class='op'>=</span> <span class='id identifier rubyid_string'>string</span>
@@ -386,6 +441,42 @@
   
 </div>
 
+
+  <div id="class_method_details" class="method_details_list">
+    <h2>Class Method Details</h2>
+
+    
+      <div class="method_details first">
+  <h3 class="signature first" id="from_parts-class_method">
+  
+    .<strong>from_parts</strong>(*segments)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+5
+6
+7</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/fancy_terminal_text/text.rb', line 5</span>
+
+<span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_from_parts'>from_parts</span><span class='lparen'>(</span><span class='op'>*</span><span class='id identifier rubyid_segments'>segments</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='id identifier rubyid_segments'>segments</span><span class='period'>.</span><span class='id identifier rubyid_collect'>collect</span><span class='lparen'>(</span><span class='op'>&amp;</span><span class='symbol'>:to_s</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_join'>join</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
 
   <div id="instance_method_details" class="method_details_list">
     <h2>Instance Method Details</h2>
@@ -430,13 +521,13 @@
       <pre class="lines">
 
 
-26
-27
-28
-29</pre>
+30
+31
+32
+33</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/fancy_terminal_text/text.rb', line 26</span>
+      <pre class="code"><span class="info file"># File 'lib/fancy_terminal_text/text.rb', line 30</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_bold'>bold</span>
   <span class='id identifier rubyid_clean'>clean</span> <span class='op'>=</span> <span class='ivar'>@string</span><span class='period'>.</span><span class='id identifier rubyid_gsub'>gsub</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>\033[1m</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_gsub'>gsub</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>\033[0m</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
@@ -462,20 +553,20 @@
       <pre class="lines">
 
 
-55
-56
-57
-58
-59
-60
-61
-62
-63
-64
-65</pre>
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/fancy_terminal_text/text.rb', line 55</span>
+      <pre class="code"><span class="info file"># File 'lib/fancy_terminal_text/text.rb', line 67</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_centre'>centre</span><span class='lparen'>(</span><span class='id identifier rubyid_length'>length</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_difference'>difference</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='id identifier rubyid_length'>length</span> <span class='op'>-</span> <span class='id identifier rubyid_visual_length'>visual_length</span><span class='comma'>,</span> <span class='int'>0</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_max'>max</span>
@@ -530,14 +621,14 @@
       <pre class="lines">
 
 
-67
-68
-69
-70
-71</pre>
+79
+80
+81
+82
+83</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/fancy_terminal_text/text.rb', line 67</span>
+      <pre class="code"><span class="info file"># File 'lib/fancy_terminal_text/text.rb', line 79</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_colour'>colour</span><span class='lparen'>(</span><span class='id identifier rubyid_colour_name'>colour_name</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_raise'>raise</span> <span class='const'>ArgumentError</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Colour name must be one of </span><span class='embexpr_beg'>#{</span><span class='const'>String</span><span class='period'>.</span><span class='id identifier rubyid_colors'>colors</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span> <span class='kw'>unless</span> <span class='const'>String</span><span class='period'>.</span><span class='id identifier rubyid_colors'>colors</span><span class='period'>.</span><span class='id identifier rubyid_include?'>include?</span><span class='lparen'>(</span><span class='id identifier rubyid_colour_name'>colour_name</span><span class='rparen'>)</span>
@@ -588,13 +679,13 @@
       <pre class="lines">
 
 
-34
-35
-36
-37</pre>
+38
+39
+40
+41</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/fancy_terminal_text/text.rb', line 34</span>
+      <pre class="code"><span class="info file"># File 'lib/fancy_terminal_text/text.rb', line 38</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_italic'>italic</span>
   <span class='id identifier rubyid_clean'>clean</span> <span class='op'>=</span> <span class='ivar'>@string</span><span class='period'>.</span><span class='id identifier rubyid_gsub'>gsub</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>\e[3m</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_gsub'>gsub</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>\e[0m</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
@@ -620,16 +711,16 @@
       <pre class="lines">
 
 
-39
-40
-41
-42
-43
-44
-45</pre>
+51
+52
+53
+54
+55
+56
+57</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/fancy_terminal_text/text.rb', line 39</span>
+      <pre class="code"><span class="info file"># File 'lib/fancy_terminal_text/text.rb', line 51</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_left_pad'>left_pad</span><span class='lparen'>(</span><span class='id identifier rubyid_length'>length</span><span class='rparen'>)</span>
   <span class='kw'>if</span> <span class='ivar'>@string</span><span class='period'>.</span><span class='id identifier rubyid_length'>length</span> <span class='op'>&gt;</span> <span class='id identifier rubyid_visual_length'>visual_length</span>
@@ -658,16 +749,16 @@
       <pre class="lines">
 
 
-47
-48
-49
-50
-51
-52
-53</pre>
+59
+60
+61
+62
+63
+64
+65</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/fancy_terminal_text/text.rb', line 47</span>
+      <pre class="code"><span class="info file"># File 'lib/fancy_terminal_text/text.rb', line 59</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_right_pad'>right_pad</span><span class='lparen'>(</span><span class='id identifier rubyid_length'>length</span><span class='rparen'>)</span>
   <span class='kw'>if</span> <span class='ivar'>@string</span><span class='period'>.</span><span class='id identifier rubyid_length'>length</span> <span class='op'>&gt;</span> <span class='id identifier rubyid_visual_length'>visual_length</span>
@@ -696,15 +787,71 @@
       <pre class="lines">
 
 
-10
-11
-12</pre>
+14
+15
+16</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/fancy_terminal_text/text.rb', line 10</span>
+      <pre class="code"><span class="info file"># File 'lib/fancy_terminal_text/text.rb', line 14</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_to_s'>to_s</span>
   <span class='ivar'>@string</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="underline-instance_method">
+  
+    #<strong>underline</strong>  &#x21d2; <tt><span class='object_link'><a href="" title="FTT::Text (class)">Text</a></span></tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Underlines the text.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="" title="FTT::Text (class)">Text</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+46
+47
+48
+49</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/fancy_terminal_text/text.rb', line 46</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_underline'>underline</span>
+  <span class='id identifier rubyid_clean'>clean</span> <span class='op'>=</span> <span class='ivar'>@string</span><span class='period'>.</span><span class='id identifier rubyid_gsub'>gsub</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>\e[4m</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_gsub'>gsub</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>\e[0m</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+  <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_class'>class</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>\e[4m</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_clean'>clean</span><span class='embexpr_end'>}</span><span class='tstring_content'>\e[0m</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -750,13 +897,13 @@
       <pre class="lines">
 
 
-18
-19
-20
-21</pre>
+22
+23
+24
+25</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/fancy_terminal_text/text.rb', line 18</span>
+      <pre class="code"><span class="info file"># File 'lib/fancy_terminal_text/text.rb', line 22</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_visual_length'>visual_length</span>
   <span class='comment'># Regex shamelessly taken from https://stackoverflow.com/a/56206076/16164934
@@ -772,7 +919,7 @@
 </div>
 
       <div id="footer">
-  Generated on Sat Jul 10 14:21:05 2021 by
+  Generated on Sat Jul 10 18:05:50 2021 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.26 (ruby-2.7.2).
 </div>

@@ -6,7 +6,7 @@ RSpec.describe "Block#new" do
 
     ruby = FTT::Text.new('Ruby ').bold
     friends = FTT::Text.new('friends').colour(:red)
-    ruby_friends = FTT::Line.new(ruby, friends)
+    ruby_friends = FTT::Text.from_parts(ruby, friends)
 
     block = FTT::Block.new(hello, ruby_friends)
   end

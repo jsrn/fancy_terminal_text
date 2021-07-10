@@ -35,7 +35,7 @@ module FTT
       end
 
       middle = components.map do |c|
-        FTT::Line.new(FTT::Text.new(chars.sample), c, FTT::Text.new(chars.sample))
+        FTT::Text.from_parts(FTT::Text.new(chars.sample), c, FTT::Text.new(chars.sample))
       end
 
       bottom_border = ''

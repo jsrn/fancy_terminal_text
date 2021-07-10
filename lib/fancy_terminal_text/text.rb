@@ -2,6 +2,10 @@ require 'colorize'
 
 module FTT
   class Text
+    def self.from_parts(*segments)
+      new(segments.collect(&:to_s).join)
+    end
+
     # @param string [String]
     def initialize(string)
       @string = string
