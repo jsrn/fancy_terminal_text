@@ -36,6 +36,14 @@ module FTT
       self.class.new("\e[3m#{clean}\e[0m")
     end
 
+    # Underlines the text.
+    #
+    # @return [Text]
+    def underline
+      clean = @string.gsub("\e[4m", "").gsub("\e[0m", "")
+      self.class.new("\e[4m#{clean}\e[0m")
+    end
+
     def left_pad(length)
       if @string.length > visual_length
         length = @string.length + (length - visual_length)

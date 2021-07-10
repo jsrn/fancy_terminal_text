@@ -86,3 +86,13 @@ RSpec.describe "Text#italic" do
     expect(FTT::Text.new("text").italic.visual_length).to eq(4)
   end
 end
+
+RSpec.describe "Text#underline" do
+  it "underlines text" do
+    expect(FTT::Text.new("text").underline.to_s).to eq("\e[4mtext\e[0m")
+  end
+
+  it "does not affect visual length" do
+    expect(FTT::Text.new("text").underline.visual_length).to eq(4)
+  end
+end
