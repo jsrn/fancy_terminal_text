@@ -9,7 +9,7 @@ module FTT
     end
 
     def bold
-      FTT::Text.new(to_s).bold
+      FTT::Line.new(FTT::Text.new(to_s).bold)
     end
 
     def visual_length
