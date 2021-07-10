@@ -8,6 +8,10 @@ module FTT
       @segments.collect(&:to_s).join
     end
 
+    def bold
+      FTT::Text.new(to_s).bold
+    end
+
     def visual_length
       @segments.collect(&:visual_length).sum
     end

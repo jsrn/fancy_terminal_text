@@ -16,7 +16,8 @@ module FTT
     end
 
     def bold
-      self.class.new("\033[1m#{@string}\033[0m")
+      clean = @string.gsub("\033[1m", "").gsub("\033[0m", "")
+      self.class.new("\033[1m#{clean}\033[0m")
     end
 
     def left_pad(length)
