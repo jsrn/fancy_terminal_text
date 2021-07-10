@@ -1,4 +1,5 @@
 module FTT
+  # Contains definitions for common colours.
   module Colours
     RAINBOW = [
       '0;31;49',

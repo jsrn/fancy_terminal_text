@@ -14,10 +14,6 @@ module FTT
       @lines.collect(&:to_s).join("\n")
     end
 
-    def visual_length
-      @lines.collect(&:visual_length).sum
-    end
-
     def pad(top = 1, left = 1, right = 1, bottom = 1)
       top_padding = Array.new(top) { FTT::Text.new('') }
       bottom_padding = Array.new(bottom) { FTT::Text.new('') }
