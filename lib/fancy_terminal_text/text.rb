@@ -48,6 +48,23 @@ module FTT
       self.class.new("\e[4m#{clean}\e[0m")
     end
 
+    def rainbow
+      new_string = ""
+
+      FTT::Colours::RAINBOW.cycle(2).each_with_index do |colour, index|
+        character = @string[index]
+        break if character.nil?
+
+        if character =~ /[^[:print:]]/
+          new_string << character
+        else
+          new_string << "\e[#{colour}m#{character}\e[0m"
+        end
+      end
+
+      FTT::Text.new(new_string)
+    end
+
     def left_pad(length)
       if @string.length > visual_length
         length = @string.length + (length - visual_length)

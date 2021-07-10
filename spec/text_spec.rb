@@ -96,3 +96,9 @@ RSpec.describe "Text#underline" do
     expect(FTT::Text.new("text").underline.visual_length).to eq(4)
   end
 end
+
+RSpec.describe "Text#rainbow" do
+  it "rainbows strings of less than 7 chars" do
+    expect(FTT::Text.new("text").rainbow.to_s).to eq("\e[0;31;49mt\e[0m\e[0;91;49me\e[0m\e[0;33;49mx\e[0m\e[0;92;49mt\e[0m")
+  end
+end

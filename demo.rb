@@ -2,16 +2,7 @@
 
 require "./lib/fancy_terminal_text.rb"
 
-sprinkle = [
-  FTT::Text.new('s').colour(:red),
-  FTT::Text.new('p').colour(:light_red),
-  FTT::Text.new('r').colour(:yellow),
-  FTT::Text.new('i').colour(:light_green),
-  FTT::Text.new('n').colour(:green),
-  FTT::Text.new('k').colour(:blue),
-  FTT::Text.new('l').colour(:light_magenta),
-  FTT::Text.new('e').colour(:magenta),
-].join
+sprinkle = FTT::Text.new("sprinkle").rainbow
 
 puts <<-DEMO
 #{FTT::Text.new("# Fancy Terminal Text Demo").bold}
