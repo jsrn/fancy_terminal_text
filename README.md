@@ -13,8 +13,7 @@ Fancy text for your Ruby based console applications. Leans on [ANSI escape codes
   * Rainbow!
 * Text alignment
   * Centre
-  * Left pad
-  * Right oad
+  * Left & right pad
 * Borders
   * Wrap text in padding/borders
 
